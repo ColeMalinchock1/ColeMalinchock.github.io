@@ -1,19 +1,18 @@
 body {
     background-color: rgb(193, 219, 222);
-  }
-  h1 {
+}
+h1 {
     color: blue;
-  }
-  p {
+}
+p {
     color: red;
-  }
+}
 img {
     width: 100px;
     border-radius: 10px;
     float: left;
     margin-right: 10px;
 }
-
-p.username {
+.username {
     font-weight: bold;
 }
