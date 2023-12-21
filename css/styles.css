@@ -17,6 +17,7 @@
 }
 body{
     font-family: montserrat;
+    background: #f0fff5;
 }
 nav{
     background: #00691e;
@@ -46,8 +47,13 @@ nav ul li a{
     border-radius: 3px;
     text-transform: uppercase;
 }
-
 a.active,a:hover{
-    background: #13b958;
+    background: #004815;
     transition: .5s;
+}
+img{
+    width: 100px;
+    border-radius: 10px;
+    float: left;
+    margin-right: 10px;
 }
