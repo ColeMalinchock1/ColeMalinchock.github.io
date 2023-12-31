@@ -1,70 +1,191 @@
-/* img {
-    width: 100px;
-    border-radius: 10px;
-    float: left;
-    margin-right: 10px;
+/* Styles for screens smaller than 600 pixels (phones) */
+@media only screen and (max-width: 600px) {
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: montserrat;
+        background: #f0fff5;
+    }
+    nav{
+        background: #00691e;
+        height: 40px;
+        width: 100%;
+    }
+    label.logo{
+        color: white;
+        font-size: 20px;
+        line-height: 40px;
+        padding: 0 50px;
+        font-weight: bold;
+    }
+    nav ul{
+        float: right;
+        margin-right: 10px;
+    }
+    nav ul li{
+        display: inline-block;
+        line-height: 40px;
+        margin: 0 3px;
+    }
+    nav ul li a{
+        color: white;
+        font-size: 8px;
+        padding: 4px 7px;
+        border-radius: 2px;
+        text-transform: uppercase;
+    }
+    a.active,a:hover{
+        background: #004815;
+        transition: .5s;
+    }
+    
+    .image_box{
+        float: left;
+    }
+    .small_img{
+        width: 100px;
+        border-radius: 10px;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    .rect{
+        height: 200px;
+        width: 400px;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: #97a19a;
+    }
 }
-.username {
-    font-weight: bold;
-} */
 
-*{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-}
-body{
-    font-family: montserrat;
-    background: #f0fff5;
-}
-nav{
-    background: #00691e;
-    height: 80px;
-    width: 100%;
-}
-label.logo{
-    color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-}
-nav ul{
-    float: right;
-    margin-right: 20px;
-}
-nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-}
-nav ul li a{
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    text-transform: uppercase;
-}
-a.active,a:hover{
-    background: #004815;
-    transition: .5s;
+/* Styles for screens between 601 and 1024 pixels (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: montserrat;
+        background: #f0fff5;
+    }
+    nav{
+        background: #00691e;
+        height: 80px;
+        width: 100%;
+    }
+    label.logo{
+        color: white;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+    nav ul{
+        float: right;
+        margin-right: 20px;
+    }
+    nav ul li{
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5px;
+    }
+    nav ul li a{
+        color: white;
+        font-size: 17px;
+        padding: 7px 13px;
+        border-radius: 3px;
+        text-transform: uppercase;
+    }
+    a.active,a:hover{
+        background: #004815;
+        transition: .5s;
+    }
+    
+    .image_box{
+        float: left;
+    }
+    .small_img{
+        width: 100px;
+        border-radius: 10px;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    .rect{
+        height: 200px;
+        width: 400px;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: #97a19a;
+    }
 }
 
-.image_box{
-    float: left;
-}
-.small_img{
-    width: 100px;
-    border-radius: 10px;
-    margin-left: 30px;
-    margin-top: 30px;
-}
-.rect{
-    height: 200px;
-    width: 400px;
-    margin-left: 20px;
-    margin-top: 20px;
-    background-color: #97a19a;
+/* Styles for screens larger than 1024 pixels (laptops/desktops) */
+@media only screen and (min-width: 1025px) {
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    body{
+        font-family: montserrat;
+        background: #f0fff5;
+    }
+    nav{
+        background: #00691e;
+        height: 80px;
+        width: 100%;
+    }
+    label.logo{
+        color: white;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 100px;
+        font-weight: bold;
+    }
+    nav ul{
+        float: right;
+        margin-right: 20px;
+    }
+    nav ul li{
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5px;
+    }
+    nav ul li a{
+        color: white;
+        font-size: 17px;
+        padding: 7px 13px;
+        border-radius: 3px;
+        text-transform: uppercase;
+    }
+    a.active,a:hover{
+        background: #004815;
+        transition: .5s;
+    }
+    
+    .image_box{
+        float: left;
+    }
+    .small_img{
+        width: 100px;
+        border-radius: 10px;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    .rect{
+        height: 200px;
+        width: 400px;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: #97a19a;
+    }
 }
