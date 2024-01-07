@@ -1,12 +1,7 @@
-/* img {
-    width: 100px;
-    border-radius: 10px;
-    float: left;
-    margin-right: 10px;
-}
-.username {
-    font-weight: bold;
-} */
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
 
 *{
     padding: 0;
