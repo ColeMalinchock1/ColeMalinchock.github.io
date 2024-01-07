@@ -48,8 +48,8 @@ a.active,a:hover{
 .small_img{
     width: 100px;
     border-radius: 10px;
-    margin-left: 30px;
-    margin-top: 30px;
+    margin-left: 5px;
+    margin-top: 5px;
 }
 .rect{
     height: 200px;
