@@ -66,6 +66,7 @@ a.active,a:hover{
     margin-left: 20px;
     margin-top: 20px;
     background-color: #97a19a;
+    border-radius: 10px;
 }
 
 .words{
