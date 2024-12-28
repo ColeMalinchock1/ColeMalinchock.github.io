@@ -1,0 +1,87 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu .name {
+  color: white;
+  font-size: 1.8rem;
+  margin-left: 2rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.nav-menu a:hover {
+  color: #ddd;
+}
+
+.contact-form {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  height: 100px;
+}
+
+.contact-form button {
+  background: #000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.welcome-section {
+  text-align: center;
+  background-color: #333333;  /* Dark gray background */
+  color: white;              /* White text to contrast with dark background */
+  padding: 2rem;            /* Add some padding around the content */
+  margin: 2rem 0;           /* Add some vertical spacing */
+  border-radius: 8px;  
+}
+
+.welcome-section h1 {
+  margin-bottom: 1rem;
+}
