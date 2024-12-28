@@ -27,7 +27,7 @@ function Home() {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 7000);
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]);
 
   return (
     <>
