@@ -1,16 +1,17 @@
 import React from 'react';
 import './About.css';
+import headshot from '../images/Headshot.jpg';
 import { MapPin, Briefcase, GraduationCap, Heart } from 'lucide-react';
 
 function About() {
   return (
-    <div className="about-container max-w-4xl mx-auto px-4 py-8 mt-24 pt-8">
+    <div className="about-container max-w-4xl mx-auto px-4 py-8 mt-32 pt-12">
       {/* Header Section with Image */}
       <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
         <div className="w-48 h-48 md:w-64 md:h-64 relative">
           <img
-            src="..\images\Headshot.jpg"  // Replace with your image path
-            alt="Your Name"
+            src={headshot}  // Replace with your image path
+            alt="Cole Malinchock Headshot"
             className="rounded-full object-cover w-full h-full shadow-lg"
           />
         </div>
@@ -23,7 +24,7 @@ function About() {
           </div>
           <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600">
             <Briefcase size={20} />
-            <span>Robotic Engineer</span>  {/* Update with your role */}
+            <span>Engineering Student</span>  {/* Update with your role */}
           </div>
         </div>
       </div>
@@ -32,15 +33,15 @@ function About() {
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">Bio</h2>
         <p className="text-gray-700 leading-relaxed mb-4">
-          Hello! I'm Cole Malinchock, a passionate software engineer with a love for building
-          innovative solutions. When I'm not coding, you can find me exploring new
+          Hello! I'm Cole Malinchock, a passionate mechanical engineer with a love for building
+          innovative robotics. When I'm not building or designing, you can find me exploring new
           technologies, contributing to open-source projects, or enjoying outdoor
           activities.
         </p>
         <p className="text-gray-700 leading-relaxed">
           I believe in continuous learning and pushing the boundaries of what's possible
-          with technology. My goal is to create meaningful applications that make a
-          positive impact on people's lives.
+          with technology. My goal is to develop the technology to aid the beautiful
+          environment around us.
         </p>
       </section>
 
@@ -51,9 +52,14 @@ function About() {
           <h2 className="text-2xl font-semibold">Education</h2>
         </div>
         <div className="bg-gray-50 rounded-lg p-6">
-          <h3 className="font-semibold mb-2">University of Pennsylvania</h3>
-          <p className="text-gray-600 mb-1">B.S. in Computer Science</p>
-          <p className="text-gray-500">Expected Graduation: May 2024</p>
+          <h3 className="font-semibold mb-2">North Carolina State University</h3>
+          <p className="text-gray-600 mb-1">B.S. in Mechanical Engineering</p>
+          <p className="text-gray-600 mb-1">Minors in Computer Programming and Environmental Science</p>
+          <p className="text-gray-500">Expected Graduation: May 2026</p>
+          <p className="text-gray-500">Honors:</p>
+          <p className="text-gray-500"> - Park Scholar class of 2026</p>
+          <p className="text-gray-500"> - Dean's List from Fall 2022 to Fall 2024 </p>
+          <p className="text-gray-500"> - Member of Tau Beta Pi and Pi Tau Sigma Honor Societies </p>
         </div>
       </section>
 

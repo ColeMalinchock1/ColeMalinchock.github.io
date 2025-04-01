@@ -1,0 +1,66 @@
+
+/* Games.css */
+.game-container {
+    margin-top: 160px;  /* For the banner offset */
+    padding: 2rem;
+  }
+  
+  .click-button {
+    background: linear-gradient(145deg, #3490dc, #2779bd);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .click-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .click-button:active {
+    transform: scale(0.95);
+  }
+  
+  .leaderboard-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .leaderboard-container:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leaderboard-item {
+    transition: all 0.2s ease;
+  }
+  
+  .leaderboard-item:hover {
+    background-color: #f7fafc;
+  }
+  
+  .sign-out-button {
+    transition: all 0.2s ease;
+  }
+  
+  .sign-out-button:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .auth-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-input {
+    transition: border-color 0.2s ease;
+  }
+  
+  .auth-input:focus {
+    border-color: #3490dc;
+    outline: none;
+    ring: 2px;
+    ring-color: #3490dc;
+  }

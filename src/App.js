@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 import About from './components/About';
-import Academic from './components/Academic';
-import Personal from './components/Personal';
+import Projects from './components/Projects';  // Changed from Academic
+import Games from './components/Games';        // Changed from Personal
 import ContactForm from './components/ContactForm';
 
 function Welcome() {
@@ -47,16 +47,16 @@ function App() {
           <div className="nav-links">
             <Link to="/">Main</Link>
             <Link to="/about">About Me</Link>
-            <Link to="/academic">Academic Projects</Link>
-            <Link to="/personal">Personal Projects</Link>
+            <Link to="/projects">Projects</Link>  {/* Changed from /academic */}
+            <Link to="/games">Games</Link>       {/* Changed from /personal */}
           </div>
         </nav>
         
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/academic" element={<Academic />} />
-          <Route path="/personal" element={<Personal />} />
+          <Route path="/projects" element={<Projects />} />  {/* Changed from Academic */}
+          <Route path="/games" element={<Games />} />        {/* Changed from Personal */}
         </Routes>
       </div>
     </BrowserRouter>
