@@ -57,8 +57,8 @@ function About() {
           <p className="text-gray-600 mb-1">Minors in Computer Programming and Environmental Science</p>
           <p className="text-gray-500">Expected Graduation: May 2026</p>
           <p className="text-gray-500">Honors:</p>
-          <p className="text-gray-500"> - Park Scholar class of 2026</p>
-          <p className="text-gray-500"> - Dean's List from Fall 2022 to Fall 2024 </p>
+          <p className="text-gray-500"> - Park Scholarship Class of 2026</p>
+          <p className="text-gray-500"> - Dean's List from Fall 2022 to Spring 2025 </p>
           <p className="text-gray-500"> - Member of Tau Beta Pi and Pi Tau Sigma Honor Societies </p>
         </div>
       </section>
