@@ -1,0 +1,259 @@
+/* Projects.module.css */
+/* Main container styles */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .sectionHeading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  /* Project grid styles */
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .projectsGrid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .projectsGrid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  /* Project card styles */
+  .projectCard {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .projectCard:hover {
+    transform: scale(1.05);
+  }
+  
+  .projectImageContainer {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+  }
+  
+  .projectImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .projectContent {
+    padding: 1.5rem;
+  }
+  
+  .projectTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .projectDescription {
+    color: #4B5563;
+  }
+  
+  /* Modal styles */
+  .modalOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: 1rem;
+  }
+  
+  .modalContainer {
+    background-color: white;
+    border-radius: 0.5rem;
+    max-width: 56rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin-top: 5rem;
+  }
+  
+  .modalHeader {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 1.5rem;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modalTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .closeButton {
+    padding: 0.5rem;
+    border-radius: 9999px;
+  }
+  
+  .closeButton:hover {
+    background-color: #F3F4F6;
+  }
+  
+  .modalContent {
+    padding: 1.5rem;
+  }
+  
+  /* Updated carousel styles */
+  .carouselContainer {
+    position: relative;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem; /* Fixed height container */
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: #f8f8f8; /* Light background for empty space */
+  }
+  
+  .carouselImage {
+    height: 100%; /* Use full height of container */
+    width: auto; /* Let width adjust automatically based on aspect ratio */
+    max-width: 100%; /* Ensure image doesn't overflow container width */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    display: block; /* Remove any default spacing */
+    margin: 0 auto; /* Center the image */
+  }
+  
+  /* Keep your existing nav buttons and dots styles */
+  .carouselNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: background-color 0.2s;
+    z-index: 10; /* Ensure buttons are above images */
+  }
+  
+  .carouselNav:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .carouselNavPrev {
+    left: 1rem;
+  }
+  
+  .carouselNavNext {
+    right: 1rem;
+  }
+  
+  .carouselDots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Ensure dots are above images */
+  }
+  
+  .tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tag {
+    padding: 0.25rem 0.75rem;
+    background-color: #F3F4F6;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+  }
+  
+  .fullDescription {
+    color: #4B5563;
+    margin-bottom: 1.5rem;
+  }
+  
+  .linksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  /* Link button styles */
+  .linkButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+  }
+  
+  .githubLink {
+    background-color: #1F2937;
+  }
+  
+  .githubLink:hover {
+    background-color: #374151;
+  }
+  
+  .liveLink {
+    background-color: #2563EB;
+  }
+  
+  .liveLink:hover {
+    background-color: #3B82F6;
+  }
+  
+  .cadLink {
+    background-color: #059669;
+  }
+  
+  .cadLink:hover {
+    background-color: #10B981;
+  }
+  
+  .pcbLink {
+    background-color: #7C3AED;
+  }
+  
+  .pcbLink:hover {
+    background-color: #8B5CF6;
+  }
