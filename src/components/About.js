@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import headshot from '../images/Headshot.jpg';
-import { MapPin, Briefcase, GraduationCap, Heart } from 'lucide-react';
+import { MapPin, Briefcase, GraduationCap, Heart, Linkedin, Mail } from 'lucide-react';
 
 function About() {
   return (
@@ -22,9 +22,17 @@ function About() {
             <MapPin size={20} />
             <span>Chapel Hill, NC</span>  {/* Update with your location */}
           </div>
-          <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600">
+          <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 mb-2">
             <Briefcase size={20} />
             <span>Engineering Student</span>  {/* Update with your role */}
+          </div>
+          <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 mb-2" href={"google.com"}>
+            < Linkedin size={20} />
+            <a href={"https://www.linkedin.com/in/cole-malinchock/"}>LinkedIn</a>
+          </div>
+          <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 mb-2" href={"google.com"}>
+            < Mail size={20} />
+            <span>malinchc@gmail.com</span>
           </div>
         </div>
       </div>
@@ -73,10 +81,9 @@ function About() {
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="font-semibold mb-2">Technical Interests</h3>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Web Development</li>
-              <li>Machine Learning</li>
-              <li>Open Source Contributing</li>
-              <li>Cloud Computing</li>
+              <li>Robotics</li>
+              <li>Reinforcement Learning</li>
+              <li>Environmental Monitoring</li>
             </ul>
           </div>
           <div className="bg-gray-50 rounded-lg p-6">
@@ -84,8 +91,8 @@ function About() {
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>Photography</li>
               <li>Hiking</li>
-              <li>Playing Guitar</li>
-              <li>Reading Tech Blogs</li>
+              <li>Cycling</li>
+              <li>Woodworking</li>
             </ul>
           </div>
         </div>
@@ -96,8 +103,11 @@ function About() {
         <h2 className="text-2xl font-semibold mb-4">Technical Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            'JavaScript', 'React', 'Node.js', 'Python',
-            'SQL', 'Git', 'AWS', 'Docker'
+            'Python', 'SolidWorks', 'Python', 'KiCAD',
+            'Matlab', 'Simulink', 'Git', 'ROS2', 'C',
+            'C++', 'MIG Welding', '3D Printing', 'Java',
+            'React', 'MuJoCo', 'Arduino', 'Linux', 'Uppaal',
+            'Assembly'
           ].map((skill) => (
             <div 
               key={skill}
