@@ -1,15 +1,30 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 import About from './components/About';
-import Projects from './components/Projects/Projects';  // Changed from Academic
-import Games from './components/Games';        // Changed from Personal
+import Projects from './components/Projects/Projects';
+import Games from './components/Games';
 import ContactForm from './components/ContactForm';
 
 function Welcome() {
+  const [isVisible, setIsVisible] = useState(false);
+  const bannerRef = useRef(null);
+
+  // Effect to handle initial visibility when component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 500); // Short delay to ensure CSS transition works
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="welcome-section">
+    <div 
+      className={`welcome-banner ${isVisible ? 'visible' : ''}`} 
+      ref={bannerRef}
+    >
       <h1>Welcome to my website!</h1>
       <p>Look around and learn some more about me!</p>
     </div>
@@ -31,8 +46,10 @@ function Home() {
 
   return (
     <>
-    <img src={images[currentImage]} alt="Rotating" className="App-image" />
-    <Welcome />
+    <div className="hero-container">
+      <img src={images[currentImage]} alt="Rotating" className="App-image" />
+      <Welcome />
+    </div>
     <ContactForm />
     </>
   );
@@ -47,16 +64,16 @@ function App() {
           <div className="nav-links">
             <Link to="/">Main</Link>
             <Link to="/about">About Me</Link>
-            <Link to="/projects">Projects</Link>  {/* Changed from /academic */}
-            <Link to="/games">Games</Link>       {/* Changed from /personal */}
+            <Link to="/projects">Projects</Link>
+            <Link to="/games">Games</Link>
           </div>
         </nav>
         
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />  {/* Changed from Academic */}
-          <Route path="/games" element={<Games />} />        {/* Changed from Personal */}
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/games" element={<Games />} />
         </Routes>
       </div>
     </BrowserRouter>
