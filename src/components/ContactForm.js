@@ -7,12 +7,21 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  const SERVICE_ID = 'service_ic8c1gj';
-  const TEMPLATE_ID = 'template_dd4njsn';
-  const PUBLIC_KEY = '84htRGAmMaK073Mvw';
+  // Access environment variables
+  const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
   const sendEmail = (e) => {
     e.preventDefault();
+    
+    // Check if environment variables are properly loaded
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      console.error('EmailJS environment variables are missing');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
     
     setIsSubmitting(true);
     setSubmitStatus(null);
@@ -28,7 +37,7 @@ export default function ContactForm() {
           setSubmitStatus('success');
           form.current.reset();
       }, (error) => {
-          console.error('Email error:', error.text);
+          console.error('Email error:', error);
           setSubmitStatus('error');
       })
       .finally(() => {
@@ -48,7 +57,7 @@ export default function ContactForm() {
       
       {submitStatus === 'error' && (
         <div className="error-message">
-          Failed to send message. Please try again or contact me directly at your@email.com
+          Failed to send message. Please try again or contact me directly at cole.malinchock@gmail.com
         </div>
       )}
       

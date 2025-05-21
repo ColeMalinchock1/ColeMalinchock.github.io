@@ -4,6 +4,7 @@ import './App.css';
 
 import About from './components/About';
 import Projects from './components/Projects/Projects';
+import Publications from './components/Publications/Publications';
 import Games from './components/Games';
 import ContactForm from './components/ContactForm';
 
@@ -65,6 +66,7 @@ function App() {
             <Link to="/">Main</Link>
             <Link to="/about">About Me</Link>
             <Link to="/projects">Projects</Link>
+            <Link to="/publications">Publications</Link>
             <Link to="/games">Games</Link>
           </div>
         </nav>
@@ -73,6 +75,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/publications" element={<Publications/>}/>
           <Route path="/games" element={<Games />} />
         </Routes>
       </div>

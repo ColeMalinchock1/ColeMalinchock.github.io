@@ -2,20 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { getDatabase, ref, set, get, onValue, update } from 'firebase/database';
-import './Games.css'
+import './ClickerGame.css';
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyDPsOiF5PxlrV6WBfeNGMtwis-KGLdYDPs",
-  authDomain: "clicker-game-5a474.firebaseapp.com",
-  databaseURL: "https://clicker-game-5a474-default-rtdb.firebaseio.com",
-  projectId: "clicker-game-5a474",
-  storageBucket: "clicker-game-5a474.firebasestorage.app",
-  messagingSenderId: "772384915326",
-  appId: "1:772384915326:web:61afde6e97a80e9a41fd2f",
-  measurementId: "G-ZZ2DTXCTQZ"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
+
+// Add validation to ensure environment variables are loaded
+if (!process.env.REACT_APP_FIREBASE_API_KEY) {
+  console.error('Firebase configuration is missing. Make sure environment variables are properly set.');
+}
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -81,7 +85,7 @@ function ClickerGame() {
   };
 
   // Update the handleSignup function to properly store username
-const handleSignup = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -125,126 +129,126 @@ const handleSignup = async (e) => {
   };
 
   return (
-    <div className="about-page-content max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">Clicker Game</h1>
+    <div className="game-container">
+      <h1 className="game-title">Clicker Game</h1>
       
       {!user ? (
-        <div className="max-w-md mx-auto">
+        <div className="auth-container">
           {!showSignup ? (
             // Login Form
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-1">Email</label>
+            <form onSubmit={handleLogin} className="form">
+              <div className="form-group">
+                <label className="form-label">Email</label>
                 <input
                   type="email"
                   value={loginForm.email}
                   onChange={(e) => setLoginForm({...loginForm, email: e.target.value})}
-                  className="w-full p-2 border rounded"
+                  className="form-input"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Password</label>
+              <div className="form-group">
+                <label className="form-label">Password</label>
                 <input
                   type="password"
                   value={loginForm.password}
                   onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
-                  className="w-full p-2 border rounded"
+                  className="form-input"
                 />
               </div>
               <button 
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+                className="btn btn-primary"
               >
                 Login
               </button>
               <button 
                 type="button"
                 onClick={() => setShowSignup(true)}
-                className="w-full bg-gray-200 text-gray-800 py-2 rounded hover:bg-gray-300 mt-2"
+                className="btn btn-secondary"
               >
                 Need an account? Sign up
               </button>
             </form>
           ) : (
             // Signup Form
-            <form onSubmit={handleSignup} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-1">Username</label>
+            <form onSubmit={handleSignup} className="form">
+              <div className="form-group">
+                <label className="form-label">Username</label>
                 <input
                   type="text"
                   value={signupForm.username}
                   onChange={(e) => setSignupForm({...signupForm, username: e.target.value})}
-                  className="w-full p-2 border rounded"
+                  className="form-input"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Email</label>
+              <div className="form-group">
+                <label className="form-label">Email</label>
                 <input
                   type="email"
                   value={signupForm.email}
                   onChange={(e) => setSignupForm({...signupForm, email: e.target.value})}
-                  className="w-full p-2 border rounded"
+                  className="form-input"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Password</label>
+              <div className="form-group">
+                <label className="form-label">Password</label>
                 <input
                   type="password"
                   value={signupForm.password}
                   onChange={(e) => setSignupForm({...signupForm, password: e.target.value})}
-                  className="w-full p-2 border rounded"
+                  className="form-input"
                 />
               </div>
               <button 
                 type="submit"
-                className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+                className="btn btn-primary"
               >
                 Sign Up
               </button>
               <button 
                 type="button"
                 onClick={() => setShowSignup(false)}
-                className="w-full bg-gray-200 text-gray-800 py-2 rounded hover:bg-gray-300 mt-2"
+                className="btn btn-secondary"
               >
                 Back to Login
               </button>
             </form>
           )}
-          {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
+          {error && <p className="error-message">{error}</p>}
         </div>
       ) : (
-        <div className="text-center">
-          <div className="mb-8">
-            <p className="text-xl mb-2">Welcome, {user.username}!</p>
-            <p className="text-3xl font-bold mb-4">Your Clicks: {clickCount}</p>
+        <div className="game-area">
+          <div className="user-section">
+            <p className="welcome-message">Welcome, {user.username}!</p>
+            <p className="click-count">Your Clicks: {clickCount}</p>
             <button 
               onClick={handleClick}
-              className="w-48 h-48 bg-blue-500 rounded-full hover:bg-blue-600 transform transition-transform hover:scale-105 active:scale-95"
+              className="click-button"
             >
               Click Me!
             </button>
           </div>
           
-          <div className="max-w-md mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Leaderboard</h2>
-            <div className="bg-gray-50 rounded-lg p-4">
-                {leaderboard.map((player, index) => (
+          <div className="leaderboard-container">
+            <h2 className="leaderboard-title">Leaderboard</h2>
+            <div className="leaderboard">
+              {leaderboard.map((player, index) => (
                 <div 
-                    key={index}
-                    className="flex justify-between items-center py-2 border-b last:border-0"
+                  key={index}
+                  className="leaderboard-item"
                 >
-                    <span className="font-medium">
+                  <span className="player-name">
                     {index + 1}. {player.username || 'Anonymous'}
-                    </span>
-                    <span>{player.clicks} clicks</span>
+                  </span>
+                  <span className="player-score">{player.clicks} clicks</span>
                 </div>
-                ))}
+              ))}
             </div>
           </div>
           
           <button 
             onClick={() => auth.signOut()}
-            className="mt-8 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+            className="btn btn-logout"
           >
             Sign Out
           </button>
