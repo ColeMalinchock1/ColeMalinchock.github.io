@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import headshot from '../images/Headshot.jpg';
-import { MapPin, Briefcase, GraduationCap, Heart, Linkedin, Mail } from 'lucide-react';
+import { MapPin, Briefcase, GraduationCap, Heart, Linkedin, Mail, GithubIcon } from 'lucide-react';
 
 function About() {
   return (
@@ -29,6 +29,10 @@ function About() {
           <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 mb-2" href={"google.com"}>
             < Linkedin size={20} />
             <a href={"https://www.linkedin.com/in/cole-malinchock/"}>LinkedIn</a>
+          </div>
+          <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 mb-2" href={"google.com"}>
+            < GithubIcon size={20} />
+            <a href={"https://github.com/ColeMalinchock1"}>GitHub</a>
           </div>
           <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 mb-2" href={"google.com"}>
             < Mail size={20} />
@@ -63,11 +67,12 @@ function About() {
           <h3 className="font-semibold mb-2">North Carolina State University</h3>
           <p className="text-gray-600 mb-1">B.S. in Mechanical Engineering</p>
           <p className="text-gray-600 mb-1">Minors in Computer Programming and Environmental Science</p>
-          <p className="text-gray-500">Expected Graduation: May 2026</p>
+          <p className="text-gray-600 mb-1">Expected Graduation: May 2026</p>
           <p className="text-gray-500">Honors:</p>
           <p className="text-gray-500"> - Park Scholarship Class of 2026</p>
-          <p className="text-gray-500"> - Dean's List from Fall 2022 to Spring 2025 </p>
-          <p className="text-gray-500"> - Member of Tau Beta Pi and Pi Tau Sigma Honor Societies </p>
+          <p className="text-gray-500"> - Dean's List from Fall 2022 to Spring 2025</p>
+          <p className="text-gray-500"> - Member of Tau Beta Pi and Pi Tau Sigma Honor Societies</p>
+          <p className="text-gray-500"> - Projected Summa Cum Laude</p>
         </div>
       </section>
 
@@ -107,7 +112,7 @@ function About() {
             'Matlab', 'Simulink', 'Git', 'ROS2', 'C',
             'C++', 'MIG Welding', '3D Printing', 'Java',
             'React', 'MuJoCo', 'Arduino', 'Linux', 'Uppaal',
-            'Assembly'
+            'Assembly', 'SolidWorks FEA'
           ].map((skill) => (
             <div 
               key={skill}
