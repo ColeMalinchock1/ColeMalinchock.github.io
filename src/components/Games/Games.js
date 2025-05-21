@@ -1,5 +1,5 @@
 import React from 'react';
-import ClickerGame from './ClickerGame';
+import ClickerGame from './ClickerGame/ClickerGame';
 
 function Games() {
   return (

@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
-import About from './components/About';
+import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Publications from './components/Publications/Publications';
-import Games from './components/Games';
-import ContactForm from './components/ContactForm';
+import Games from './components/Games/Games';
+import ContactForm from './components/ContactForm/ContactForm';
 
 function Welcome() {
   const [isVisible, setIsVisible] = useState(false);
