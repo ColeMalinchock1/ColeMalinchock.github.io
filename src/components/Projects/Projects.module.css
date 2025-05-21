@@ -147,6 +147,20 @@
     display: block; /* Remove any default spacing */
     margin: 0 auto; /* Center the image */
   }
+
+  .imageDescription {
+    position: absolute;
+    top: 0; /* Adjust to position above the dots */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    margin: 0 auto;
+    max-width: 80%;
+  }
   
   /* Keep your existing nav buttons and dots styles */
   .carouselNav {
@@ -205,9 +219,22 @@
     font-size: 0.875rem;
   }
   
-  .fullDescription {
+  .description {
     color: #4B5563;
     margin-bottom: 1.5rem;
+  }
+
+  .descriptionList {
+    list-style-type: disc; /* Default bullet */
+    /* Or use other types: */
+    /* list-style-type: circle; */ /* Hollow circle */
+    /* list-style-type: square; */ /* Square bullet */
+    padding-left: 20px; /* Indent the list */
+    margin-bottom: 1.5rem;
+  }
+
+  .descriptionList li {
+    margin-bottom: 8px; /* Space between items */
   }
   
   .linksContainer {

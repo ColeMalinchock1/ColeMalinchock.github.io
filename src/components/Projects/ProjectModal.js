@@ -9,19 +9,23 @@ function ProjectModal({ project, onClose }) {
   if (!project) return null;
   
   // Get the images array or create one if it doesn't exist
-  const images = project.images || [project.image];
+  const processedImages = project.images 
+    ? project.images.map(img => typeof img === 'string' 
+        ? { src: img, description: '' } 
+        : img)
+    : [{ src: project.image, description: '' }];
   
   // Navigate to previous image
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? processedImages.length - 1 : prevIndex - 1
     );
   };
   
   // Navigate to next image
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => 
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === processedImages.length - 1 ? 0 : prevIndex + 1
     );
   };
   
@@ -29,6 +33,8 @@ function ProjectModal({ project, onClose }) {
   const goToImage = (index) => {
     setCurrentImageIndex(index);
   };
+
+  const currentImage = processedImages[currentImageIndex];
 
   return (
     <div className={styles.modalOverlay}>
@@ -47,13 +53,20 @@ function ProjectModal({ project, onClose }) {
           {/* Image carousel */}
           <div className={styles.carouselContainer}>
             <img
-              src={images[currentImageIndex]}
-              alt={`${project.title} #${currentImageIndex + 1}`}
+              src={currentImage.src}
+              alt={currentImage.description || `${project.title} #${currentImageIndex + 1}`}
               className={styles.carouselImage}
             />
+
+            {/* Image description */}
+            {currentImage.description && (
+              <div className={styles.imageDescription}>
+                {currentImage.description}
+              </div>
+            )}
             
             {/* Only show navigation controls if there's more than one image */}
-            {images.length > 1 && (
+            {processedImages.length > 1 && (
               <>
                 <button 
                   className={`${styles.carouselNav} ${styles.carouselNavPrev}`}
@@ -72,7 +85,7 @@ function ProjectModal({ project, onClose }) {
                 
                 {/* Dot indicators */}
                 <div className={styles.carouselDots}>
-                  {images.map((_, index) => (
+                  {processedImages.map((_, index) => (
                     <button
                       key={index}
                       className={`${styles.carouselDot} ${
@@ -100,9 +113,42 @@ function ProjectModal({ project, onClose }) {
           </div>
 
           {/* Description */}
-          <p className={styles.fullDescription}>
-            {project.fullDescription}
+          <h1>Overview</h1>
+          <p className={styles.description}>
+            {project.overview}
           </p>
+
+          {/* Contribution */}
+          <h1>Contributions</h1>
+          <p className={styles.description}>
+            {project.contributions}
+          </p>
+
+          {/* Start and End Date */}
+          <h1>Start Date</h1>
+          <p className={styles.description}>
+            {project.startDate}
+          </p>
+          <h1>End Date</h1>
+          <p className={styles.description}>
+            {project.endDate}
+          </p>
+
+          {/* Funding Partners */}
+          <h1>Partners</h1>
+          <ul className={styles.descriptionList}>
+            {project.partners.map((partner, index) => (
+              <li key={index}>{partner}</li>
+            ))}
+          </ul>
+
+          {/* Results */}
+          <h1>Results</h1>
+          <ul className={styles.descriptionList}>
+            {project.results.map((result, index) => (
+              <li key={index}>{result}</li>
+            ))}
+          </ul>
 
           {/* Links */}
           <div className={styles.linksContainer}>
