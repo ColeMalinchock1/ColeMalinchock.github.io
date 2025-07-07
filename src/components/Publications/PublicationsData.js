@@ -50,7 +50,7 @@ const projects = [
       tags: [],
       links: {
         github: "",
-        paper: ""
+        paper: "/documents/publications/QLoc/QLoc_IV.pdf"
       }
     },
   ];
